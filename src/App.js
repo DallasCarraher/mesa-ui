@@ -1,3 +1,3 @@
 export default function App() {
-  return "Development Server Running ⭐️";
+  return 'Development Server Running ⭐️'
 }
