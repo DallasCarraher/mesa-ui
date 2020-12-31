@@ -1,5 +1,5 @@
 {
-  "name": "@dallascarraher/mesa-ui",
+  "name": "@mesa-ui/mesa-ui",
   "version": "0.1.0",
   "description": "A React Component Library",
   "main": "index.js",
