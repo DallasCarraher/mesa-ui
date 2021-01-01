@@ -24,7 +24,7 @@
     "test:ci": "CI=true react-scripts test -i",
     "nodeCheck": "node scripts/checkNodeVersion",
     "format": "prettier --write \"src/**/*.js\"",
-    "compile": "cross-env NODE_ENV=production babel src/components --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,stories.js",
+    "compile": "cross-env NODE_ENV=production babel src/components --out-dir dist --ignore src/components/*.stories.js,src/components/*.spec.js,src/components/*.test.js",
     "deploy": "firebase deploy --debug --token \"$FIREBASE_TOKEN\" ",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
