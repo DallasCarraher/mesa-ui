@@ -1,0 +1,20 @@
+steps:
+  # Install
+  - name: 'node:14.15.1'
+    entrypoint: npm
+    args: ['install']
+
+  # Test
+  - name: 'node:14.15.1'
+    entrypoint: npm
+    args: ['run', 'test:ci']
+
+  # Compile
+  - name: 'node:14.15.1'
+    entrypoint: npm
+    args: ['run', 'compile']
+
+  # Publish
+  - name: 'node:14.15.1'
+    entrypoint: npm
+    args: ['publish']
