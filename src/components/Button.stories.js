@@ -4,11 +4,11 @@ import { action } from '@storybook/addon-actions'
 
 import Button from './Button'
 
-export const text = 'Button'
-
 export const actions = {
   onClick: action('onClick'),
 }
+
+export const text = 'Button'
 
 storiesOf('Button', module).add('default', () => (
   <Button text={text} {...actions} />
