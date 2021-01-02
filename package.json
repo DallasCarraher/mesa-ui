@@ -18,11 +18,11 @@
   },
   "homepage": "https://github.com/DallasCarraher/mesa-ui#readme",
   "scripts": {
-    "start": "start-storybook -p 6006 -s public",
+    "start": "start-storybook -p 6006",
     "test": "jest",
     "test:ci": "CI=true jest -i",
     "build": "cross-env NODE_ENV=production babel src/components --out-dir dist --ignore src/components/*.stories.js,src/components/*.spec.js,src/components/*.test.js",
-    "build-storybook": "build-storybook -s public",
+    "build-storybook": "build-storybook",
     "nodeCheck": "node scripts/checkNodeVersion",
     "format": "prettier --write \"src/**/*.js\""
   },
@@ -35,7 +35,6 @@
     "@storybook/addon-essentials": "^6.1.11",
     "@storybook/addon-links": "^6.1.11",
     "@storybook/node-logger": "^6.1.11",
-    "@storybook/preset-create-react-app": "^3.1.5",
     "@storybook/react": "^6.1.11",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
