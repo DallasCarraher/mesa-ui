@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/DallasCarraher/mesa-ui#readme",
   "scripts": {
-    "start": "start-storybook -p 6006",
+    "start": "start-storybook -p 6006 --no-manager-cache",
     "test": "jest",
     "test:ci": "CI=true jest -i",
     "build": "cross-env NODE_ENV=production babel src/components --out-dir dist --ignore src/components/*.stories.js,src/components/*.spec.js,src/components/*.test.js",
