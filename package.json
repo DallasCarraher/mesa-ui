@@ -19,8 +19,8 @@
   "homepage": "https://github.com/DallasCarraher/mesa-ui#readme",
   "scripts": {
     "start": "start-storybook -p 6006 -s public",
-    "test": "react-scripts test",
-    "test:ci": "CI=true react-scripts test -i",
+    "test": "jest",
+    "test:ci": "CI=true jest -i",
     "build": "cross-env NODE_ENV=production babel src/components --out-dir dist --ignore src/components/*.stories.js,src/components/*.spec.js,src/components/*.test.js",
     "build-storybook": "build-storybook -s public",
     "nodeCheck": "node scripts/checkNodeVersion",
@@ -42,6 +42,7 @@
     "@testing-library/user-event": "^12.1.10",
     "cross-env": "^7.0.3",
     "husky": "^4.3.6",
+    "jest": "^26.6.3",
     "prettier": "2.2.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
