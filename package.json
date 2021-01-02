@@ -26,7 +26,9 @@
     "nodeCheck": "node scripts/checkNodeVersion",
     "format": "prettier --write \"src/**/*.js\""
   },
-  "dependencies": {},
+  "dependencies": {
+    "styled-components": "^5.2.1"
+  },
   "devDependencies": {
     "@babel/cli": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
