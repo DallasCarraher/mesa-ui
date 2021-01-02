@@ -9,10 +9,10 @@ steps:
     entrypoint: npm
     args: ['run', 'test:ci']
 
-  # Compile
+  # Build
   - name: 'node:14.15.1'
     entrypoint: npm
-    args: ['run', 'compile']
+    args: ['run', 'build']
 
   # Publish
   - name: 'node:14.15.1'
