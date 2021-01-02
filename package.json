@@ -18,16 +18,13 @@
   },
   "homepage": "https://github.com/DallasCarraher/mesa-ui#readme",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "start-storybook -p 6006 -s public",
     "test": "react-scripts test",
     "test:ci": "CI=true react-scripts test -i",
+    "build": "cross-env NODE_ENV=production babel src/components --out-dir dist --ignore src/components/*.stories.js,src/components/*.spec.js,src/components/*.test.js",
+    "build-storybook": "build-storybook -s public",
     "nodeCheck": "node scripts/checkNodeVersion",
-    "format": "prettier --write \"src/**/*.js\"",
-    "compile": "cross-env NODE_ENV=production babel src/components --out-dir dist --ignore src/components/*.stories.js,src/components/*.spec.js,src/components/*.test.js",
-    "deploy": "firebase deploy --debug --token \"$FIREBASE_TOKEN\" ",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "format": "prettier --write \"src/**/*.js\""
   },
   "dependencies": {},
   "devDependencies": {
@@ -43,13 +40,11 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "babel-loader": "8.1.0",
     "cross-env": "^7.0.3",
     "husky": "^4.3.6",
     "prettier": "2.2.1",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "4.0.1"
+    "react-dom": "^17.0.1"
   },
   "browserslist": {
     "production": [
