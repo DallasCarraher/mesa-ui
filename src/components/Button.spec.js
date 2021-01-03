@@ -4,8 +4,8 @@ import userEvent from '@testing-library/user-event'
 import { Button } from './Button'
 
 describe('Button', () => {
-  test('text', () => {
-    render(<Button text="Button" />)
+  test('renders', () => {
+    render(<Button>Button</Button>)
     const ourButton = screen.getByRole('button', { name: 'Button' })
     expect(ourButton).toBeInTheDocument()
   })
