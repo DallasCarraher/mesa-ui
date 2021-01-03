@@ -1,4 +1,12 @@
 {
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
-  "plugins": ["jest-dom"]
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:jest/recommended"
+  ],
+  "plugins": ["jest", "jest-dom"],
+  "parser": "@babel/eslint-parser",
+  "env": {
+    "jest/globals": true
+  }
 }
