@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { func, string, bool } from 'prop-types'
-import { SystemColors, getColor } from '../theme/Colors'
+import { SystemColors, getColor } from './theme/Colors'
 
 const StyledButton = styled.button`
   background-color: ${({ systemColor, disabled }) =>

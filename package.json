@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/DallasCarraher/mesa-ui/issues"
   },
-  "homepage": "https://github.com/DallasCarraher/mesa-ui#readme",
+  "homepage": "https://mesa-ui.web.app/",
   "scripts": {
     "start": "start-storybook -p 6006 --no-manager-cache",
     "test": "jest",
