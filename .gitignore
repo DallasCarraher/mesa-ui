@@ -12,6 +12,12 @@
 /build
 /dist
 
+# firebase
+/.firebase
+
+# vscode
+.vscode
+
 # eslint
 .eslintcache
 
@@ -25,5 +31,3 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-.vscode
