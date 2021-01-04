@@ -1,42 +1,42 @@
 import React from 'react'
 import styled from 'styled-components'
-import { func, string, bool, oneOfType, arrayOf, element } from 'prop-types'
+import { func, string, bool } from 'prop-types'
 import { SystemColors, getColor } from '../theme/Colors'
 
 const StyledButton = styled.button`
-  background-color: ${({ color, disabled }) =>
-    disabled ? SystemColors.Gray(3, 1) : getColor(color)};
+  background-color: ${({ systemColor, disabled }) =>
+    disabled ? SystemColors.Gray(3, 1) : getColor(systemColor)};
   border: solid 2px;
-  border-color: ${({ color, disabled }) =>
-    disabled ? SystemColors.Gray(3, 1) : getColor(color)};
+  border-color: ${({ systemColor, disabled }) =>
+    disabled ? SystemColors.Gray(3, 1) : getColor(systemColor)};
   border-radius: 5px;
   color: ${(props) => props.theme.text || 'white'};
   font-size: 16px;
   :hover {
     cursor: ${({ disabled }) => !disabled && 'pointer'};
-    background-color: ${({ color, disabled }) =>
-      disabled ? SystemColors.Gray(3, 1) : getColor(color, 0.9)};
-    border-color: ${({ color, disabled }) =>
-      disabled ? SystemColors.Gray(3, 1) : getColor(color, 0.9)};
+    background-color: ${({ systemColor, disabled }) =>
+      disabled ? SystemColors.Gray(3, 1) : getColor(systemColor, 0.9)};
+    border-color: ${({ systemColor, disabled }) =>
+      disabled ? SystemColors.Gray(3, 1) : getColor(systemColor, 0.9)};
   }
   :focus {
     cursor: pointer;
-    background-color: ${({ color }) => getColor(color, 0.9)};
+    background-color: ${({ systemColor }) => getColor(systemColor, 0.9)};
     border-color: ${(props) => props.theme.text || 'white'};
   }
   :active {
     cursor: pointer;
     border-radius: 5px;
-    background-color: ${({ color }) => getColor(color, 0.7)};
+    background-color: ${({ systemColor }) => getColor(systemColor, 0.7)};
     border-color: ${(props) => props.theme.text || 'white'};
   }
   padding: ${({ p }) => p};
-  margin: ${(props) => props.margin || '10px'};
+  margin: ${({ m }) => m};
   user-select: none;
   outline: none;
 `
 
-export const Button = ({ children, onClick, disabled, color, p }) => {
+export const Button = ({ text, onClick, disabled, systemColor, p, m }) => {
   const handleOnClick = () => {
     !disabled && onClick()
   }
@@ -45,26 +45,29 @@ export const Button = ({ children, onClick, disabled, color, p }) => {
     <StyledButton
       onClick={handleOnClick}
       disabled={disabled}
-      color={color}
+      systemColor={systemColor}
       p={p}
+      m={m}
     >
-      {children}
+      {text}
     </StyledButton>
   )
 }
 
 Button.propTypes = {
-  children: oneOfType([arrayOf(element), element, string]),
+  text: string,
   onClick: func,
   disabled: bool,
-  color: string,
+  systemColor: string,
   p: string,
+  m: string,
 }
 
 Button.defaultProps = {
-  children: 'Button',
+  text: 'Button',
   onClick: () => {},
   disabled: false,
-  color: 'Indigo',
+  systemColor: 'Blue',
   p: '10px',
+  m: '0px',
 }
