@@ -7,6 +7,9 @@
   "plugins": ["jest", "jest-dom"],
   "parser": "@babel/eslint-parser",
   "env": {
-    "jest/globals": true
+    "jest/globals": true,
+    "browser": true,
+    "amd": true,
+    "node": true
   }
 }
