@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { func, string, bool } from 'prop-types'
-import { SystemColors, getColor } from './theme/Colors'
+import { SystemColors, getColor } from '../Colors'
 
 const StyledButton = styled.button`
   background-color: ${({ systemColor, disabled }) =>
@@ -36,23 +36,28 @@ const StyledButton = styled.button`
   outline: none;
 `
 
-export const Button = ({ text, onClick, disabled, systemColor, p, m }) => {
-  const handleOnClick = () => {
-    !disabled && onClick()
-  }
+export const Button = React.forwardRef(
+  ({ text, onClick, disabled, systemColor, p, m }, ref) => {
+    const handleOnClick = () => {
+      !disabled && onClick()
+    }
 
-  return (
-    <StyledButton
-      onClick={handleOnClick}
-      disabled={disabled}
-      systemColor={systemColor}
-      p={p}
-      m={m}
-    >
-      {text}
-    </StyledButton>
-  )
-}
+    return (
+      <StyledButton
+        ref={ref}
+        onClick={handleOnClick}
+        disabled={disabled}
+        systemColor={systemColor}
+        p={p}
+        m={m}
+      >
+        {text}
+      </StyledButton>
+    )
+  }
+)
+
+Button.displayName = 'Button'
 
 Button.propTypes = {
   text: string,
